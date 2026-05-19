@@ -1,0 +1,17 @@
+name: HomePlugin
+version: 1.0.0
+main: uz.homePlugin.HomePlugin
+api-version: 1.19
+author: UzDev
+description: 10 tagacha teleport nuqtalari GUI bilan
+
+commands:
+  homes:
+    description: Homelar GUIsini ochish
+    usage: /homes
+    permission: homeplugin.use
+
+permissions:
+  homeplugin.use:
+    description: /homes buyrug'idan foydalanish
+    default: true
