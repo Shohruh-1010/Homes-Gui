@@ -1,0 +1,24 @@
+name: Build Plugin
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Java o'rnatish
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Maven build
+        run: mvn clean package -DskipTests
+
+      - name: JAR yuklash
+        uses: actions/upload-artifact@v3
+        with:
+          name: HomePlugin
+          path: target/HomePlugin-*.jar
